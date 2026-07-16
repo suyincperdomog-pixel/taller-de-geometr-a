@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taller de Geometría Futbolera</title>
+    <title>Guía de Geometría Futbolera</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
             text-align: center;
             border-bottom: 5px solid var(--secondary-color);
             padding-bottom: 20px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
         h1 {
             font-family: 'Poppins', sans-serif;
@@ -53,6 +53,61 @@
             margin-top: 35px;
             margin-bottom: 15px;
         }
+        h3.subhead {
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary-color);
+            font-size: 16px;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        .intro-box {
+            background: linear-gradient(135deg, #f0fdf4, #eafaf0);
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin-bottom: 10px;
+        }
+        .intro-box p { margin: 0 0 10px 0; }
+        .intro-box p:last-child { margin-bottom: 0; }
+        .index-list {
+            columns: 2;
+            column-gap: 24px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 14px;
+        }
+        .index-list li { break-inside: avoid; margin-bottom: 4px; }
+        .uses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .use-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 14px;
+            font-size: 14px;
+        }
+        .use-card strong { color: var(--primary-color); }
+        .definition-box {
+            background-color: #eef2ff;
+            border: 1px solid #c7d2fe;
+            border-left: 5px solid #4338ca;
+            border-radius: 8px;
+            padding: 14px 20px;
+            margin-bottom: 16px;
+        }
+        .definition-box .def-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #3730a3;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
         .formula {
             background-color: var(--primary-color);
             color: white;
@@ -63,6 +118,14 @@
             font-weight: bold;
             margin: 10px 0;
         }
+        .example-flex {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .example-flex .diagram-col { flex: 0 0 auto; }
+        .example-flex .text-col { flex: 1 1 220px; }
         .grid-blocks {
             display: grid;
             grid-template-columns: 1fr;
@@ -80,25 +143,6 @@
             border-radius: 8px;
             padding: 20px;
         }
-        .explanation-box {
-            background-color: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin-bottom: 20px;
-        }
-        .visual-diagram {
-            font-family: monospace;
-            background-color: #1e293b;
-            color: #38bdf8;
-            padding: 15px;
-            border-radius: 6px;
-            white-space: pre;
-            overflow-x: auto;
-            text-align: center;
-            margin: 15px 0;
-            line-height: 1.2;
-        }
         .exercise-box {
             background-color: #fffbeb;
             border-left: 4px solid #f59e0b;
@@ -113,6 +157,23 @@
             display: inline-block;
             margin-bottom: 10px;
         }
+        .highlight-box {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-left: 5px solid #ea580c;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 18px 0;
+        }
+        .highlight-box .h-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #c2410c;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .highlight-box ul { margin: 8px 0 0 18px; padding: 0; }
+        .highlight-box li { margin-bottom: 4px; }
         .socratic-section {
             background: linear-gradient(135deg, #0f172a, #1e293b);
             color: #f8fafc;
@@ -146,6 +207,13 @@
             margin-top: 10px;
             text-align: right;
         }
+        .sources-box {
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid var(--border-color);
+            margin-top: 30px;
+            padding-top: 14px;
+        }
         footer {
             text-align: center;
             margin-top: 40px;
@@ -160,30 +228,89 @@
 
 <div class="container">
     <header>
-        <h1>Guía de Geometría Futbolera</h1>
-        <p>Aprende las fórmulas de áreas analizando la cancha de fútbol</p>
+        <h1>&#9917; Guía de Geometría Futbolera</h1>
+        <p>Aprendé las fórmulas de áreas analizando la cancha de fútbol</p>
     </header>
 
-    <h2>1. El Campo de Juego (Rectángulo)</h2>
-    <div class="explanation-box">
-        <p><strong>¿Cómo se calcula?</strong> El rectángulo es una figura con cuatro lados donde los opuestos miden lo mismo. Para saber su área (el espacio interior), multiplicamos la medida del largo (base) por el ancho (altura).</p>
+    <h2>¿Qué vas a encontrar en esta guía?</h2>
+    <div class="intro-box">
+        <p>Esta guía es un material de apoyo para estudiar el <strong>cálculo de áreas de figuras planas</strong>
+        (rectángulo, cuadrado, triángulo y círculo), un contenido central del eje de Geometría en la escuela
+        secundaria. Para cada figura vas a encontrar: su <strong>definición</strong>, la <strong>fórmula</strong>
+        de su área con la explicación de por qué es así, un <strong>ejemplo resuelto</strong> paso a paso y
+        <strong>ejercicios prácticos</strong> para resolver por tu cuenta. Al final hay un bloque de
+        <strong>contenidos destacados</strong> (cosas que suelen confundirse o que vale la pena recordar) y un
+        prompt para que un tutor de IA te acompañe con el método socrático, sin darte las respuestas hechas.</p>
+        <p><strong>¿Para qué sirve aprender esto?</strong> El área es la medida de la superficie que ocupa una
+        figura y se expresa siempre en unidades cuadradas (cm&sup2;, m&sup2;, km&sup2;). No es un ejercicio
+        abstracto: arquitectos e ingenieros la usan para calcular cuánto material se necesita en una construcción
+        y para que los planos cumplan normativas; en agricultura se usa para calcular cuánta semilla o fertilizante
+        entra en un terreno; y en la vida diaria aparece al comprar el césped sintético de una cancha, la pintura
+        para una pared, el papel para forrar una caja o la cerámica para un piso. Practicarla con ejemplos de una
+        cancha de fútbol &mdash;el campo de juego, el círculo central, el banderín de córner&mdash; ayuda a
+        visualizar estas fórmulas en un contexto conocido antes de aplicarlas a cualquier otro problema.</p>
+        <ol class="index-list">
+            <li>El rectángulo</li>
+            <li>El cuadrado</li>
+            <li>El triángulo</li>
+            <li>El círculo</li>
+            <li>Contenidos destacados</li>
+            <li>Tutor de IA (método socrático)</li>
+        </ol>
     </div>
-    <div class="formula">Área = Base × Altura (b × h)</div>
+
+    <h3 class="subhead">Algunos usos reales del cálculo de áreas</h3>
+    <div class="uses-grid">
+        <div class="use-card"><strong>Arquitectura y construcción:</strong> calcular metros cuadrados de piso, pared o techo para presupuestar materiales.</div>
+        <div class="use-card"><strong>Agricultura:</strong> calcular la superficie de un terreno para saber cuánta semilla o fertilizante se necesita.</div>
+        <div class="use-card"><strong>Diseño de interiores:</strong> saber cuánta pintura, alfombra o papel tapiz comprar sin desperdiciar.</div>
+        <div class="use-card"><strong>Deporte:</strong> delimitar y mantener campos de juego, cómo el césped de una cancha de fútbol.</div>
+    </div>
+
+    <h2>1. El Campo de Juego (Rectángulo)</h2>
+    <div class="definition-box">
+        <div class="def-title">Definición</div>
+        <p>Un <strong>rectángulo</strong> es un cuadrilátero (polígono de cuatro lados) que tiene sus cuatro
+        ángulos interiores rectos (90&deg;). Sus lados son iguales dos a dos: los dos lados más largos se llaman
+        <strong>base</strong> y los dos más cortos, <strong>altura</strong> (aunque cualquier par de lados
+        opuestos y paralelos puede tomarse como base). El rectángulo es un caso particular de
+        <strong>paralelogramo</strong> (cuadrilátero con los lados opuestos paralelos e iguales).</p>
+    </div>
+    <div class="explanation-box" style="background-color:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:15px 20px;margin-bottom:20px;">
+        <p><strong>¿Cómo se calcula el área?</strong> Como sus lados opuestos son iguales, para saber cuánta
+        superficie ocupa (el espacio interior) alcanza con multiplicar la medida del largo (base) por la del
+        ancho (altura).</p>
+    </div>
+    <div class="formula">Área = Base &times; Altura (b &times; h)</div>
 
     <div class="grid-blocks">
         <div class="card">
             <span class="badge">Ejemplo Resuelto</span>
             <p>Una cancha auxiliar mide 100 m de base por 70 m de altura.</p>
-            <div class="visual-diagram">+------------------------------+
-|                              | 70 m (Altura)
-+------------------------------+
-            100 m (Base)
+            <div class="example-flex">
+                <div class="diagram-col"><svg viewBox="0 0 440 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;">
+    <rect x="55" y="30" width="228.57142857142858" height="160" fill="#eafaf0" stroke="#1e3a1e" stroke-width="3"/>
+    
+    <line x1="55" y1="216" x2="283.57142857142856" y2="216" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="55" y1="208" x2="55" y2="224" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="283.57142857142856" y1="208" x2="283.57142857142856" y2="224" stroke="#1e3a1e" stroke-width="2"/>
+    <text x="169.28571428571428" y="238" text-anchor="middle" font-size="15" font-family="Poppins, Arial, sans-serif" fill="#1e3a1e" font-weight="700">100 m (Base)</text>
+    
+    
+    <line x1="305.57142857142856" y1="30" x2="305.57142857142856" y2="190" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="297.57142857142856" y1="30" x2="313.57142857142856" y2="30" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="297.57142857142856" y1="190" x2="313.57142857142856" y2="190" stroke="#1e3a1e" stroke-width="2"/>
+    <text x="325.57142857142856" y="110.0" text-anchor="middle" font-size="15" font-family="Poppins, Arial, sans-serif" fill="#1e3a1e" font-weight="700" transform="rotate(-90 325.57142857142856 110.0)">70 m (Altura)</text>
+    
+    </svg></div>
+                <div class="text-col">
+                    <p><strong>Cálculo:</strong><br>100 m &times; 70 m = <strong>7.000 m&sup2;</strong>.</p>
+                </div>
             </div>
-            <p><strong>Cálculo:</strong> 100 m × 70 m = <strong>7,000 m²</strong>.</p>
         </div>
         <div class="card exercise-box">
             <span class="badge">Ejercicios Prácticos</span>
-            <p>Observa los datos y resuelve:</p>
+            <p>Observá los datos y resolvé:</p>
             <ul>
                 <li><strong>Ejercicio A:</strong> Cancha infantil de 55 m de base por 35 m de altura. ¿Área?</li>
                 <li><strong>Ejercicio B:</strong> Cartel rectangular de 8 m de base por 3 m de altura. ¿Área?</li>
@@ -192,22 +319,43 @@
     </div>
 
     <h2>2. Sector de Mantenimiento (Cuadrado)</h2>
-    <div class="explanation-box">
-        <p><strong>¿Cómo se calcula?</strong> Un cuadrado es un tipo especial de rectángulo donde todos sus cuatro lados son iguales. Como la base y la altura miden lo mismo, la fórmula es simplemente multiplicar el valor del lado por sí mismo.</p>
+    <div class="definition-box">
+        <div class="def-title">Definición</div>
+        <p>Un <strong>cuadrado</strong> es un polígono regular de cuatro lados: sus cuatro lados tienen exactamente
+        la misma longitud y sus cuatro ángulos interiores son rectos (90&deg;). Puede pensarse como un caso
+        particular del rectángulo, en el que además la base y la altura son iguales. Como todo polígono regular,
+        el cuadrado también es un cuadrilátero equilátero (lados iguales) y equiángulo (ángulos iguales) a la vez.</p>
     </div>
-    <div class="formula">Área = Lado × Lado (L²)</div>
+    <div class="explanation-box" style="background-color:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:15px 20px;margin-bottom:20px;">
+        <p><strong>¿Cómo se calcula el área?</strong> Como la base y la altura miden lo mismo (el lado), la
+        fórmula del rectángulo se simplifica: multiplicamos el valor del lado por sí mismo.</p>
+    </div>
+    <div class="formula">Área = Lado &times; Lado (L&sup2;)</div>
 
     <div class="grid-blocks">
         <div class="card">
             <span class="badge">Ejemplo Resuelto</span>
             <p>Un área de calentamiento cuadrada mide 8 metros de lado.</p>
-            <div class="visual-diagram">+---------+
-|         |
-|         | 8 m (Lado)
-+---------+
-   8 m (Lado)
+            <div class="example-flex">
+                <div class="diagram-col"><svg viewBox="0 0 320 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;">
+    <rect x="55" y="30" width="160" height="160" fill="#eafaf0" stroke="#1e3a1e" stroke-width="3"/>
+    
+    <line x1="55" y1="216" x2="215" y2="216" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="55" y1="208" x2="55" y2="224" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="215" y1="208" x2="215" y2="224" stroke="#1e3a1e" stroke-width="2"/>
+    <text x="135.0" y="238" text-anchor="middle" font-size="15" font-family="Poppins, Arial, sans-serif" fill="#1e3a1e" font-weight="700">8 m (Lado)</text>
+    
+    
+    <line x1="237" y1="30" x2="237" y2="190" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="229" y1="30" x2="245" y2="30" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="229" y1="190" x2="245" y2="190" stroke="#1e3a1e" stroke-width="2"/>
+    <text x="257" y="110.0" text-anchor="middle" font-size="15" font-family="Poppins, Arial, sans-serif" fill="#1e3a1e" font-weight="700" transform="rotate(-90 257 110.0)">8 m (Lado)</text>
+    
+    </svg></div>
+                <div class="text-col">
+                    <p><strong>Cálculo:</strong><br>8 m &times; 8 m = <strong>64 m&sup2;</strong>.</p>
+                </div>
             </div>
-            <p><strong>Cálculo:</strong> 8 m × 8 m = <strong>64 m²</strong>.</p>
         </div>
         <div class="card exercise-box">
             <span class="badge">Ejercicios Prácticos</span>
@@ -219,30 +367,47 @@
     </div>
 
     <h2>3. La Red del Arco (Triángulo)</h2>
-    <div class="explanation-box">
-        <p><strong>¿Cómo se calcula?</strong> Si partimos un rectángulo a la mitad con una línea diagonal, obtenemos dos triángulos iguales. Por eso, para calcular el área de un triángulo, multiplicamos su base por su altura (como si fuera un rectángulo) y luego <strong>lo dividimos entre 2</strong>.</p>
-        <div class="visual-diagram">+----------------------+
-| Triángulo 1     /|   |
-|               /  |   | h (Altura)
-|             /    |   |
-|           /       |   |
-+---------/---------+
-       b (Base del Rectángulo)
-        </div>
+    <div class="definition-box">
+        <div class="def-title">Definición</div>
+        <p>Un <strong>triángulo</strong> es un polígono de tres lados y tres ángulos interiores, cuya suma es
+        siempre 180&deg;. Se clasifica <strong>según sus lados</strong> en equilátero (los tres lados iguales),
+        isósceles (dos lados iguales) o escaleno (los tres lados distintos); y <strong>según sus ángulos</strong>
+        en acutángulo (los tres ángulos agudos, menores a 90&deg;), rectángulo (tiene un ángulo de 90&deg;) u
+        obtusángulo (tiene un ángulo mayor a 90&deg;). El ejemplo de esta sección usa un triángulo rectángulo.</p>
     </div>
-    <div class="formula">Área = (Base × Altura) / 2</div>
+    <div class="explanation-box" style="background-color:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:15px 20px;margin-bottom:20px;">
+        <p><strong>¿Cómo se calcula el área?</strong> Si partimos un rectángulo a la mitad con una línea
+        diagonal, obtenemos dos triángulos iguales. Por eso, para calcular el área de un triángulo, multiplicamos
+        su base por su altura (como si fuera un rectángulo) y <strong>dividimos el resultado entre 2</strong>.
+        La altura siempre es el segmento perpendicular que va desde la base hasta el vértice opuesto.</p>
+    </div>
+    <div class="formula">Área = (Base &times; Altura) / 2</div>
 
     <div class="grid-blocks">
         <div class="card">
             <span class="badge">Ejemplo Resuelto</span>
-            <p>El perfil lateral del arco forma un triángulo de 2 m de base y 2.4 m de altura.</p>
-            <div class="visual-diagram">|\
-| \
-|  \
-|___\  2.4 m (Altura)
- 2 m (Base)
+            <p>El perfil lateral del arco forma un triángulo rectángulo de 2 m de base y 2,4 m de altura.</p>
+            <div class="example-flex">
+                <div class="diagram-col"><svg viewBox="0 0 420 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:380px;">
+    <polygon points="70,35 70,210 215.83333333333334,210" fill="#eafaf0" stroke="#1e3a1e" stroke-width="3" stroke-linejoin="round"/>
+    <polyline points="70,194 86,194 86,210" fill="none" stroke="#1e3a1e" stroke-width="2"/>
+    
+    <line x1="70" y1="236" x2="215.83333333333334" y2="236" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="70" y1="228" x2="70" y2="244" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="215.83333333333334" y1="228" x2="215.83333333333334" y2="244" stroke="#1e3a1e" stroke-width="2"/>
+    <text x="142.91666666666669" y="258" text-anchor="middle" font-size="15" font-family="Poppins, Arial, sans-serif" fill="#1e3a1e" font-weight="700">2 m (Base)</text>
+    
+    
+    <line x1="48" y1="35" x2="48" y2="210" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="40" y1="35" x2="56" y2="35" stroke="#1e3a1e" stroke-width="2"/>
+    <line x1="40" y1="210" x2="56" y2="210" stroke="#1e3a1e" stroke-width="2"/>
+    <text x="28" y="122.5" text-anchor="middle" font-size="15" font-family="Poppins, Arial, sans-serif" fill="#1e3a1e" font-weight="700" transform="rotate(-90 28 122.5)">2,4 m (Altura)</text>
+    
+    </svg></div>
+                <div class="text-col">
+                    <p><strong>Cálculo:</strong><br>(2 m &times; 2,4 m) / 2 = 4,8 / 2 = <strong>2,4 m&sup2;</strong>.</p>
+                </div>
             </div>
-            <p><strong>Cálculo:</strong> (2 m × 2.4 m) / 2 = 4.8 / 2 = <strong>2.4 m²</strong>.</p>
         </div>
         <div class="card exercise-box">
             <span class="badge">Ejercicios Prácticos</span>
@@ -254,41 +419,101 @@
     </div>
 
     <h2>4. El Círculo Central</h2>
-    <div class="explanation-box">
-        <p><strong>¿Cómo se calcula?</strong> Para hallar la superficie de un círculo, tomamos su radio (la distancia del centro al borde), lo multiplicamos por sí mismo (radio al cuadrado) y luego multiplicamos ese resultado por la constante Pi (π ≈ 3.1416).</p>
+    <div class="definition-box">
+        <div class="def-title">Definición</div>
+        <p>La <strong>circunferencia</strong> es la línea curva cerrada formada por todos los puntos del plano que
+        están a la misma distancia (el <strong>radio</strong>) de un punto fijo llamado centro. El
+        <strong>círculo</strong> es la superficie plana encerrada por esa circunferencia, es decir, la región que
+        se puede "rellenar" o pintar. En el lenguaje cotidiano se confunden, pero en matemática la circunferencia
+        es el borde (una línea, sin superficie) y el círculo es el área interior.</p>
     </div>
-    <div class="formula">Área = π × Radio²</div>
+    <div class="explanation-box" style="background-color:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:15px 20px;margin-bottom:20px;">
+        <p><strong>¿Cómo se calcula el área?</strong> Se toma el radio, se lo multiplica por sí mismo (radio al
+        cuadrado) y se multiplica ese resultado por la constante <strong>&pi;</strong> (pi), que relaciona la
+        longitud de cualquier circunferencia con su diámetro y vale aproximadamente 3,1416.</p>
+    </div>
+    <div class="formula">Área = &pi; &times; Radio&sup2;</div>
 
     <div class="grid-blocks">
         <div class="card">
             <span class="badge">Ejemplo Resuelto</span>
             <p>Un círculo de práctica tiene un radio de 3 metros.</p>
-            <div class="visual-diagram">    . - ~ - .
-  /           \
- |   r=3 m     |  (Radio)
-  \           /
-    ' - _ - '
+            <div class="example-flex">
+                <div class="diagram-col"><svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:270px;">
+    <circle cx="150.0" cy="124.0" r="70.0" fill="#eafaf0" stroke="#1e3a1e" stroke-width="3"/>
+    <circle cx="150.0" cy="124.0" r="3.5" fill="#1e3a1e"/>
+    <line x1="150.0" y1="124.0" x2="207.34064310022944" y2="83.84964945542677" stroke="#1e3a1e" stroke-width="2.5"/>
+    <text x="178.67032155011472" y="95.92482472771339" text-anchor="middle" font-size="15" font-family="Poppins, Arial, sans-serif" fill="#1e3a1e" font-weight="700">r = 3 m</text>
+    </svg></div>
+                <div class="text-col">
+                    <p><strong>Cálculo:</strong><br>3,1416 &times; (3 m)&sup2; = 3,1416 &times; 9 = <strong>28,27 m&sup2;</strong>.</p>
+                </div>
             </div>
-            <p><strong>Cálculo:</strong> 3.1416 × (3 m)² = 3.1416 × 9 = <strong>28.27 m²</strong>.</p>
         </div>
         <div class="card exercise-box">
             <span class="badge">Ejercicios Prácticos</span>
             <ul>
                 <li><strong>Ejercicio A:</strong> El círculo central oficial de una cancha tiene un radio de 6 metros. ¿Área?</li>
-                <li><strong>Ejercicio B:</strong> El punto blanco de penal tiene un radio de 0.2 metros. ¿Área?</li>
+                <li><strong>Ejercicio B:</strong> El punto blanco de penal tiene un radio de 0,2 metros. ¿Área?</li>
             </ul>
         </div>
     </div>
 
+    <h2>5. Contenidos destacados</h2>
+
+    <div class="highlight-box">
+        <div class="h-title">&#9733; Círculo vs. circunferencia: no son lo mismo</div>
+        <p>Es uno de los errores más comunes en secundaria. La <strong>circunferencia</strong> es solo el borde
+        (una línea curva, se mide en unidades lineales: cm, m). El <strong>círculo</strong> es la superficie que
+        encierra esa línea (se mide en unidades cuadradas: cm&sup2;, m&sup2;). Por eso hablamos de "longitud de la
+        circunferencia" pero de "área del círculo".</p>
+    </div>
+
+    <div class="highlight-box">
+        <div class="h-title">&#9733; Clasificación de los triángulos</div>
+        <p>Vale la pena memorizar las dos clasificaciones, porque suelen combinarse en un mismo problema:</p>
+        <ul>
+            <li><strong>Según sus lados:</strong> equilátero (3 lados iguales), isósceles (2 lados iguales), escaleno (3 lados distintos).</li>
+            <li><strong>Según sus ángulos:</strong> acutángulo (3 ángulos agudos), rectángulo (un ángulo de 90&deg;), obtusángulo (un ángulo mayor a 90&deg;).</li>
+        </ul>
+        <p>La fórmula (base &times; altura) / 2 vale para <strong>cualquier tipo de triángulo</strong>, siempre
+        que la altura usada sea la perpendicular a la base elegida.</p>
+    </div>
+
+    <div class="highlight-box">
+        <div class="h-title">&#9733; El triángulo rectángulo y el Teorema de Pitágoras</div>
+        <p>Cuando el triángulo tiene un ángulo recto (como el del ejemplo del arco), los dos lados que forman ese
+        ángulo se llaman <strong>catetos</strong> y el lado opuesto, <strong>hipotenusa</strong>. En ese caso los
+        catetos coinciden con la base y la altura, lo que hace muy fácil calcular el área. Además, si se conocen
+        dos de sus lados, el tercero se puede hallar con el Teorema de Pitágoras: <strong>hipotenusa&sup2; =
+        cateto&sup2; + cateto&sup2;</strong>.</p>
+    </div>
+
+    <div class="highlight-box">
+        <div class="h-title">&#9733; Un dato sobre &pi;</div>
+        <p>El número &pi; (pi) es la relación constante entre la longitud de cualquier circunferencia y su
+        diámetro: no importa si el círculo es tan chico como una moneda o tan grande como el círculo central de
+        un estadio, ese cociente siempre da el mismo valor. Es un número irracional (sus decimales no terminan ni
+        se repiten); en la escuela se suele redondear a 3,14 o 3,1416 según la precisión que pida el ejercicio.</p>
+    </div>
+
     <div class="socratic-section">
         <h2>Tutor de Inteligencia Artificial (Método Socrático)</h2>
-        <p>Copia este prompt y pégalo en tu chat de IA favorito para que actúe como un tutor personal que te explique las fórmulas y te evalúe sin darte las respuestas directas:</p>
+        <p>Copiá este prompt y pegalo en tu chat de IA favorito para que actúe como un tutor personal que te
+        explique las fórmulas y te evalúe sin darte las respuestas directas:</p>
 
         <div class="prompt-box">Actúa como un profesor de matemáticas de secundaria especialista en el método socrático. Mi objetivo es aprender a calcular áreas de figuras geométricas (rectángulos, cuadrados, triángulos y círculos) usando la analogía de una cancha de fútbol. No me des resultados ni me resuelvas los problemas directamente bajo ningún concepto. En lugar de eso, explícame brevemente cómo se calcula el área de la figura que yo elija y luego hazme preguntas guiadas (preguntándome qué medidas tengo, qué operación debo hacer primero o por qué dividimos entre dos en el caso del triángulo) hasta que yo mismo deduzca y resuelva los ejercicios prácticos. Si respondo incorrectamente, guíame con una pista amigable. ¿Comenzamos con el entrenamiento geométrico?</div>
     </div>
 
+    <div class="sources-box">
+        Definiciones y fórmulas elaboradas a partir de bibliografía de referencia de nivel secundario en
+        geometría plana (clasificación de triángulos por lados y ángulos, distinción círculo/circunferencia,
+        deducción del área del triángulo como mitad de un rectángulo, y relación &pi; = longitud de la
+        circunferencia / diámetro), consistentes con los diseños curriculares de Matemática de nivel medio.
+    </div>
+
     <footer>
-        <p>Taller de Geometría de la Cancha de Fútbol • Nivel Secundario</p>
+        <p>Taller de Geometría de la Cancha de Fútbol &bull; Nivel Secundario</p>
     </footer>
 </div>
 
