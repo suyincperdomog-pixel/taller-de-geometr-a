@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller de Geometría Futbolera</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a1e;
+            --secondary-color: #2e7d32;
+            --accent-color: #ffd700;
+            --text-color: #334155;
+            --bg-light: #f4fbf4;
+            --border-color: #cbd5e1;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        header {
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin-bottom: 35px;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-size: 32px;
+            margin: 0;
+        }
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-size: 22px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 12px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        .formula {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .grid-blocks {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        @media (min-width: 768px) {
+            .grid-blocks {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .explanation-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+        }
+        .visual-diagram {
+            font-family: monospace;
+            background-color: #1e293b;
+            color: #38bdf8;
+            padding: 15px;
+            border-radius: 6px;
+            white-space: pre;
+            overflow-x: auto;
+            text-align: center;
+            margin: 15px 0;
+            line-height: 1.2;
+        }
+        .exercise-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+        }
+        .badge {
+            background-color: var(--accent-color);
+            color: #1e293b;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .socratic-section {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 45px;
+            border-top: 5px solid var(--accent-color);
+        }
+        .socratic-section h2 {
+            color: var(--accent-color);
+            border-left: 5px solid var(--accent-color);
+            margin-top: 0;
+        }
+        .prompt-box {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px dashed rgba(255, 255, 255, 0.25);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 15px;
+            color: #e2e8f0;
+            cursor: pointer;
+            user-select: all;
+        }
+        .prompt-box::after {
+            content: " Haz doble clic o mantén presionado para copiar este prompt";
+            display: block;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 10px;
+            text-align: right;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 14px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Guía de Geometría Futbolera</h1>
+        <p>Aprende las fórmulas de áreas analizando la cancha de fútbol</p>
+    </header>
+
+    <h2>1. El Campo de Juego (Rectángulo)</h2>
+    <div class="explanation-box">
+        <p><strong>¿Cómo se calcula?</strong> El rectángulo es una figura con cuatro lados donde los opuestos miden lo mismo. Para saber su área (el espacio interior), multiplicamos la medida del largo (base) por el ancho (altura).</p>
+    </div>
+    <div class="formula">Área = Base × Altura (b × h)</div>
+
+    <div class="grid-blocks">
+        <div class="card">
+            <span class="badge">Ejemplo Resuelto</span>
+            <p>Una cancha auxiliar mide 100 m de base por 70 m de altura.</p>
+            <div class="visual-diagram">+------------------------------+
+|                              | 70 m (Altura)
++------------------------------+
+            100 m (Base)
+            </div>
+            <p><strong>Cálculo:</strong> 100 m × 70 m = <strong>7,000 m²</strong>.</p>
+        </div>
+        <div class="card exercise-box">
+            <span class="badge">Ejercicios Prácticos</span>
+            <p>Observa los datos y resuelve:</p>
+            <ul>
+                <li><strong>Ejercicio A:</strong> Cancha infantil de 55 m de base por 35 m de altura. ¿Área?</li>
+                <li><strong>Ejercicio B:</strong> Cartel rectangular de 8 m de base por 3 m de altura. ¿Área?</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>2. Sector de Mantenimiento (Cuadrado)</h2>
+    <div class="explanation-box">
+        <p><strong>¿Cómo se calcula?</strong> Un cuadrado es un tipo especial de rectángulo donde todos sus cuatro lados son iguales. Como la base y la altura miden lo mismo, la fórmula es simplemente multiplicar el valor del lado por sí mismo.</p>
+    </div>
+    <div class="formula">Área = Lado × Lado (L²)</div>
+
+    <div class="grid-blocks">
+        <div class="card">
+            <span class="badge">Ejemplo Resuelto</span>
+            <p>Un área de calentamiento cuadrada mide 8 metros de lado.</p>
+            <div class="visual-diagram">+---------+
+|         |
+|         | 8 m (Lado)
++---------+
+   8 m (Lado)
+            </div>
+            <p><strong>Cálculo:</strong> 8 m × 8 m = <strong>64 m²</strong>.</p>
+        </div>
+        <div class="card exercise-box">
+            <span class="badge">Ejercicios Prácticos</span>
+            <ul>
+                <li><strong>Ejercicio A:</strong> La zona del director técnico mide 4 m de lado. ¿Área?</li>
+                <li><strong>Ejercicio B:</strong> Una lona cuadrada de protección mide 12 m de lado. ¿Área?</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>3. La Red del Arco (Triángulo)</h2>
+    <div class="explanation-box">
+        <p><strong>¿Cómo se calcula?</strong> Si partimos un rectángulo a la mitad con una línea diagonal, obtenemos dos triángulos iguales. Por eso, para calcular el área de un triángulo, multiplicamos su base por su altura (como si fuera un rectángulo) y luego <strong>lo dividimos entre 2</strong>.</p>
+        <div class="visual-diagram">+----------------------+
+| Triángulo 1     /|   |
+|               /  |   | h (Altura)
+|             /    |   |
+|           /       |   |
++---------/---------+
+       b (Base del Rectángulo)
+        </div>
+    </div>
+    <div class="formula">Área = (Base × Altura) / 2</div>
+
+    <div class="grid-blocks">
+        <div class="card">
+            <span class="badge">Ejemplo Resuelto</span>
+            <p>El perfil lateral del arco forma un triángulo de 2 m de base y 2.4 m de altura.</p>
+            <div class="visual-diagram">|\
+| \
+|  \
+|___\  2.4 m (Altura)
+ 2 m (Base)
+            </div>
+            <p><strong>Cálculo:</strong> (2 m × 2.4 m) / 2 = 4.8 / 2 = <strong>2.4 m²</strong>.</p>
+        </div>
+        <div class="card exercise-box">
+            <span class="badge">Ejercicios Prácticos</span>
+            <ul>
+                <li><strong>Ejercicio A:</strong> El banderín triangular de esquina mide 40 cm de base por 30 cm de altura. ¿Área?</li>
+                <li><strong>Ejercicio B:</strong> Una cuña de drenaje triangular mide 6 m de base por 4 m de altura. ¿Área?</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>4. El Círculo Central</h2>
+    <div class="explanation-box">
+        <p><strong>¿Cómo se calcula?</strong> Para hallar la superficie de un círculo, tomamos su radio (la distancia del centro al borde), lo multiplicamos por sí mismo (radio al cuadrado) y luego multiplicamos ese resultado por la constante Pi (π ≈ 3.1416).</p>
+    </div>
+    <div class="formula">Área = π × Radio²</div>
+
+    <div class="grid-blocks">
+        <div class="card">
+            <span class="badge">Ejemplo Resuelto</span>
+            <p>Un círculo de práctica tiene un radio de 3 metros.</p>
+            <div class="visual-diagram">    . - ~ - .
+  /           \
+ |   r=3 m     |  (Radio)
+  \           /
+    ' - _ - '
+            </div>
+            <p><strong>Cálculo:</strong> 3.1416 × (3 m)² = 3.1416 × 9 = <strong>28.27 m²</strong>.</p>
+        </div>
+        <div class="card exercise-box">
+            <span class="badge">Ejercicios Prácticos</span>
+            <ul>
+                <li><strong>Ejercicio A:</strong> El círculo central oficial de una cancha tiene un radio de 6 metros. ¿Área?</li>
+                <li><strong>Ejercicio B:</strong> El punto blanco de penal tiene un radio de 0.2 metros. ¿Área?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="socratic-section">
+        <h2>Tutor de Inteligencia Artificial (Método Socrático)</h2>
+        <p>Copia este prompt y pégalo en tu chat de IA favorito para que actúe como un tutor personal que te explique las fórmulas y te evalúe sin darte las respuestas directas:</p>
+
+        <div class="prompt-box">Actúa como un profesor de matemáticas de secundaria especialista en el método socrático. Mi objetivo es aprender a calcular áreas de figuras geométricas (rectángulos, cuadrados, triángulos y círculos) usando la analogía de una cancha de fútbol. No me des resultados ni me resuelvas los problemas directamente bajo ningún concepto. En lugar de eso, explícame brevemente cómo se calcula el área de la figura que yo elija y luego hazme preguntas guiadas (preguntándome qué medidas tengo, qué operación debo hacer primero o por qué dividimos entre dos en el caso del triángulo) hasta que yo mismo deduzca y resuelva los ejercicios prácticos. Si respondo incorrectamente, guíame con una pista amigable. ¿Comenzamos con el entrenamiento geométrico?</div>
+    </div>
+
+    <footer>
+        <p>Taller de Geometría de la Cancha de Fútbol • Nivel Secundario</p>
+    </footer>
+</div>
+
+</body>
+</html>
